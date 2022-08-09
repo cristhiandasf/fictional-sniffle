@@ -4,6 +4,8 @@ import os
 this_dir = os.getcwd()
 # # Add the folder you want to run through
 SUB_DIRECTORY_TO_CHECK = ""
+OPENING_TAG = '<fo:block>'
+CLOSING_TAG = "</fo:block>"
 
 LIST_OF_DIRS = []
 
@@ -38,9 +40,9 @@ def get_indexes(lines):
     start_index = 0
     end_index = 0
     for line in lines:
-        if "<fo:block>" in line:
+        if OPENING_TAG in line:
             start_index = lines.index(line) + 1
-        if "</fo:block>" in line:
+        if CLOSING_TAG in line:
             end_index = lines.index(line)
     return start_index, end_index
 
@@ -53,7 +55,7 @@ def write_tags(end_index, lines, xml_file, star_index):
 
 def create_file(file_path: str):
     file_name = get_file_name(file_path)
-    lines = get_file_lines(f"{file_name}.xsl")
+    lines = get_file_lines(file_path)
 
     with open(f"{file_name}.xml", "w") as xml_file:
         copy_first_2_lines(lines, xml_file)
