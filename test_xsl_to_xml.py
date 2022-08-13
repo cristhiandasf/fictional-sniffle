@@ -1,10 +1,9 @@
-import pytest
-
-from xsl_to_xml import get_file_name
+from xsl_to_xml import XslToXml
 
 
 class TestXslToXml:
     def setup_method(self):
+        self.xsl_to_xml_instance = XslToXml()
         print("Test Start")
 
     def teardown_method(self):
@@ -12,6 +11,6 @@ class TestXslToXml:
 
     def test_get_file_name_returns_only_the_name_of_the_file_when_path_is_provided(self):
         expected_response = "SampleXsl"
-        actual_response = get_file_name("/Users/fictional-sniffle/SampleXsl.xsl")
+        actual_response = self.xsl_to_xml_instance.get_file_name("/Users/fictional-sniffle/SampleXsl.xsl")
         assert actual_response == expected_response
 
