@@ -1,6 +1,6 @@
 import os
 
-# # Getting the current work directory (cwd)
+# # Getting the current work directory (cwd) :)
 this_dir = os.getcwd()
 # # Add the folder you want to run through
 SUB_DIRECTORY_TO_CHECK = ""
