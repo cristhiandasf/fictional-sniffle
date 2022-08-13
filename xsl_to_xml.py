@@ -6,6 +6,7 @@ this_dir = os.getcwd()
 SUB_DIRECTORY_TO_CHECK = ""
 OPENING_TAG = '<fo:block>'
 CLOSING_TAG = "</fo:block>"
+LANGUAGE = "_lang"
 
 
 class XslToXml:
@@ -20,7 +21,7 @@ class XslToXml:
         return LIST_OF_DIRS
 
     def get_file_name(self, file_path: str):
-        return file_path.split("/")[-1].replace(".xsl", "")
+        return file_path.split("/")[-1].replace(".xsl", LANGUAGE)
 
     def get_file_lines(self, file_path: str):
         file = open(file_path)

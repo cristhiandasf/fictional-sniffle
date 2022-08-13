@@ -10,7 +10,7 @@ class TestXslToXml:
         print("Test End")
 
     def test_get_file_name_returns_only_the_name_of_the_file_when_path_is_provided(self):
-        expected_response = "SampleXsl"
-        actual_response = self.xsl_to_xml_instance.get_file_name("/Users/fictional-sniffle/SampleXsl.xsl")
+        expected_response = "SampleXsl_lang"
+        actual_response = self.xsl_to_xml_instance.get_file_name("/Users/zfictional-sniffle/SampleXsl.xsl")
         assert actual_response == expected_response
 
