@@ -7,12 +7,16 @@ SUB_DIRECTORY_TO_CHECK = ""
 OPENING_TAG = '<fo:block>'
 CLOSING_TAG = "</fo:block>"
 
-LIST_OF_DIRS = []
 
-for root, directories, files in os.walk(this_dir + SUB_DIRECTORY_TO_CHECK):
-    for file in files:
-        if file.endswith(".xsl"):
-            LIST_OF_DIRS.append(os.path.join(root, file))
+def get_list_of_directories():
+    LIST_OF_DIRS = []
+
+    for root, directories, files in os.walk(this_dir + SUB_DIRECTORY_TO_CHECK):
+        for file in files:
+            if file.endswith(".xsl"):
+                LIST_OF_DIRS.append(os.path.join(root, file))
+
+    return LIST_OF_DIRS
 
 
 def get_file_name(file_path: str):
@@ -64,5 +68,6 @@ def create_file(file_path: str):
         copy_last_line(lines, xml_file)
 
 
-for directory in LIST_OF_DIRS:
-    create_file(directory)
+def generate_xml_files():
+    for directory in get_list_of_directories():
+        create_file(directory)
