@@ -65,4 +65,9 @@
 			</multi:lingua>
 		</fo:block>
 	</xsl:template>
+	
+	<xsl:template name="sample_kml2">
+		<fo:block><kion:msg id="10">ID ripetuto</kion:msg></fo:block>
+		<!-- <fo:block><kion:msg id="20">ID ripetuto 2</kion:msg></fo:block> -->
+	</xsl:template>
 </xsl:stylesheet>
