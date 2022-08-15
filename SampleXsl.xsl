@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<test:module target="test"/>
 	<xsl:template match="/">
 	  <html>
 	  <body>
-		<h2>My CD Collection</h2>
+		<h2>Dy CD Collection</h2>
 		<table border="1">
 		  <tr bgcolor="#9acd32">
 			<th>Title</th>
@@ -19,55 +20,54 @@
 	  </body>
 	  </html>
 	</xsl:template>
-	<xsl:template name="sample_kml1">
+	<xsl:template name="sample_tdl1">
 		<fo:block>
-			TESTO1
-			<multi:lingua id="10">KML1</multi:lingua>
-			<multi:lingua id="20">
-				KML2</multi:lingua>
-			<multi:lingua id="30">
-				KML3
-			</multi:lingua>
-			TESTO2
-			<multi:lingua id="40">KML4
-			</multi:lingua>
-			<multi:lingua id="75"></multi:lingua>
-			<multi:lingua id="50">
+			TEXT1
+			<test:tag id="10">TDL1</test:tag>
+			<test:tag id="20">
+				TDL2</test:tag>
+			<test:tag id="30">
+				TDL3
+			</test:tag>
+			TEXT2
+			<test:tag id="40">TDL4
+			</test:tag>
+			<test:tag id="75"></test:tag>
+			<test:tag id="50">
 			
-			KML5
+			TDL5
 			
-			</multi:lingua>
-			<xsl:value-of select="concat('TESTO','3')"/>
-			<multi:lingua id="60">K
-			M
+			</test:tag>
+			<xsl:value-of select="concat('TEXT','3')"/>
+			<test:tag id="60">T
+			D
 				L
-				6</multi:lingua>
+				6</test:tag>
 				T
 				E
-				S
+				X
 				T
-				O
 				4
-			<multi:lingua id="70">
-			K
-			M
+			<test:tag id="70">
+			T
+			D
 			L
 			7
-			</multi:lingua>
-			<multi:lingua id="80">
-			K
-			M
+			</test:tag>
+			<test:tag id="80">
+			T
+			D
 			L
-			8</multi:lingua>
-			<multi:lingua id="90"><bold>K</bold>
-			<xsl:value-of select="concat('M','L')"/>
-			<italic>9</italic>
-			</multi:lingua>
+			8</test:tag>
+			<test:tag id="90"><example_tag>T</example_tag>
+			<xsl:value-of select="concat('D','L')"/>
+			<example_tag>9</example_tag>
+			</test:tag>
 		</fo:block>
 	</xsl:template>
 	
-	<xsl:template name="sample_kml2">
-		<fo:block><kion:msg id="10">ID ripetuto</kion:msg></fo:block>
-		<!-- <fo:block><kion:msg id="20">ID ripetuto 2</kion:msg></fo:block> -->
+	<xsl:template name="sample_tdl2">
+		<fo:block><test:tag id="10">repeated ID</test:tag></fo:block>
+		<!-- <fo:block><test:tag id="20">repeated ID 2</test:tag></fo:block> -->
 	</xsl:template>
 </xsl:stylesheet>
