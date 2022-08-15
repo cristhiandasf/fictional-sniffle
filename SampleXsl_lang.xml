@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<test:module xmlns:test="http://www.test-page.com/tags" target="standard" suffix="lang">
+	<test:tag id="10">TDL1</test:tag>
+	<test:tag id="20">
+				TDL2</test:tag>
+	<test:tag id="30">
+				TDL3
+			</test:tag>
+	<test:tag id="40">TDL4
+			</test:tag>
+	<test:tag id="75"></test:tag>
+	<test:tag id="50">
+			
+			TDL5
+			
+			</test:tag>
+	<test:tag id="60">T
+			D
+				L
+				6</test:tag>
+	<test:tag id="70">
+			T
+			D
+			L
+			7
+			</test:tag>
+	<test:tag id="80">
+			T
+			D
+			L
+			8</test:tag>
+	<test:tag id="90"><example_tag>T</example_tag>
+			<xsl:value-of select="concat('D','L')"/>
+			<example_tag>9</example_tag>
+			</test:tag>
+	<test:tag id="10">repeated ID</test:tag>
+</test:module>
